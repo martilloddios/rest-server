@@ -14,8 +14,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //pasear application/json
 app.use(bodyParser.json());
 
-//incluir usuario.js
-app.use(require('./routes/usuario'));
+//configuración global de rutas
+app.use(require('./routes/index'));
+
+//incluir login.js
+app.use(require('./routes/login'));
 
 mongoose.connect(process.env.URLDB, {
         useNewUrlParser: true,
